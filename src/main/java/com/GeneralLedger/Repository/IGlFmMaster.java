@@ -19,6 +19,8 @@ public interface IGlFmMaster extends JpaRepository<GlFmMaster, String>{
 	public List<GlFmMaster> findByGlfmfmdescContaining(String Desc);
 	
 	public List<GlFmMaster> findByGlfmfmlevel (Integer lv);
+	
+	public List<GlFmMaster> findByGlfmfmtypeContaining (String ty);
 
 	
 	

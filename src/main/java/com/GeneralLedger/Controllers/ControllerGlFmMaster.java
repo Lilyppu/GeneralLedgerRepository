@@ -45,6 +45,12 @@ public class ControllerGlFmMaster {
 		return servFmMst.getGlFmMasterByDesc(desc);		
 	}
 	
+	@GetMapping("/GeneralLedger/getglfmmstlistbytype")
+	public List<GlFmMaster> getFmType(String ty){
+		return servFmMst.getFmType(ty);
+	}
+	
+	
 	@GetMapping("/GeneralLedger/getglfmmstlistbylv")
 	public List<GlFmMaster> getGlFmMasterByLv(Integer lv){
 		return servFmMst.getGlFmMasterByLv(lv);		

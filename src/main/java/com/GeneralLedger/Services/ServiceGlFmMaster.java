@@ -37,6 +37,10 @@ public class ServiceGlFmMaster {
 	    return repoFmMst.findByglfmfmfpos(fmpos);
 	}
 	
+	public List<GlFmMaster> getFmType(String ty){
+	    return repoFmMst.findByGlfmfmtypeContaining(ty);
+	}
+	
 	public String saveUpdateFmMaster(GlFmMaster fmmaster) {
 		repoFmMst.save(fmmaster);
 		return "Submit Successfully";
