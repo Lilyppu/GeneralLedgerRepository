@@ -26,8 +26,6 @@ public interface ITNeracaMonthlyRepository extends JpaRepository<TNeracaMonthly,
 	List<TNeracaMonthly> getNeracaPList(String pMon);
 	
 	@Query(value="select max(tnm_level) from general_ledger.t_neraca_monthly where tnm_monthly=:pMon", nativeQuery = true)
-	public Integer getLevelMax(String pMon);
-	
-	
+	public Integer getLevelMax(String pMon);	
 		
 }

@@ -6,12 +6,8 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.GeneralLedger.Models.GlPjDetail;
 import com.GeneralLedger.Models.TIncomeStatement;
-import com.GeneralLedger.Models.TNeracaMonthly;
-import com.GeneralLedger.Repository.IGlPjDetailRepository;
 import com.GeneralLedger.Repository.ITIncomeStatementRepository;
-import com.GeneralLedger.Repository.ITNeracaMonthlyRepository;
 
 @Service
 public class ServiceTIncomeStatement {
@@ -23,6 +19,20 @@ public class ServiceTIncomeStatement {
 		return repoTISM.findAll();
 	}
 	
+	public String getCoyDesc(String pMon) {
+		return repoTISM.getCoyDesc(pMon);
+	}
 	
+	public String getMonDesc(String pMon) {
+		return repoTISM.getMonDesc(pMon);
+	}
+	
+	public List getIncomePList(String pMon) {
+		return repoTISM.getIncomePList(pMon);
+	}
+	
+	public Integer getLevelMax(String pMon){
+		return repoTISM.getLevelMax(pMon);
+	}
 
 }
