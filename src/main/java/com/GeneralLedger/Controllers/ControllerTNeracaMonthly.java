@@ -22,6 +22,7 @@ public class ControllerTNeracaMonthly {
 	@GetMapping("/GeneralLedger/getneracalist")
 	public List<TNeracaMonthly> getNeracaMonthly(String pmonth, String pmsg){		
 		return servTnm.getNeracaMonthly(pmonth, pmsg);
+		
 	}
 
 }

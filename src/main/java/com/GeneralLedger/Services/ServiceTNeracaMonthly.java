@@ -18,6 +18,7 @@ public class ServiceTNeracaMonthly {
 	
 	public List<TNeracaMonthly> getNeracaMonthly(String pmonth, String pmsg){
 		repoTnm.runNeraca(pmonth, pmsg);
+		System.out.println("aaaa :"+pmsg);
 		return repoTnm.findAll();
 	}
 }

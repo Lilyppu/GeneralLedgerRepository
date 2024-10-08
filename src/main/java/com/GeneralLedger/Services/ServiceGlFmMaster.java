@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import com.GeneralLedger.Models.GlFmMaster;
 import com.GeneralLedger.Repository.IGlFmMaster;
@@ -41,7 +42,7 @@ public class ServiceGlFmMaster {
 	    return repoFmMst.findByGlfmfmtypeContaining(ty);
 	}
 	
-	public String saveUpdateFmMaster(GlFmMaster fmmaster) {
+	public String saveUpdateFmMaster(@RequestBody GlFmMaster fmmaster) {
 		repoFmMst.save(fmmaster);
 		return "Submit Successfully";
 	}
