@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.GeneralLedger.Models.TIncomeStatement;
-import com.GeneralLedger.Services.ServiceGlAcMaster;
 import com.GeneralLedger.Services.ServiceTIncomeStatement;
-import com.GeneralLedger.Services.ServiceTNeracaMonthly;
 
 @RestController
 public class ControllerTIncomeStatement {
@@ -22,6 +20,26 @@ public class ControllerTIncomeStatement {
 	@GetMapping("/GeneralLedger/getIncomeStatelist")
 	public List<TIncomeStatement> getIcomeStatement(String pmonth, String pmsg){		
 		return servTIMS.getIncomeStatement(pmonth, pmsg);
+	}
+	
+	@GetMapping("/GeneralLedger/getincomecoydesc")
+	public String getCoyDesc(String pMon) {
+		return servTIMS.getCoyDesc(pMon);
+	}
+	
+	@GetMapping("/GeneralLedger/getincomemondesc")
+	public String getMonDesc(String pMon) {
+		return servTIMS.getMonDesc(pMon);
+	}	
+		
+	@GetMapping("/GeneralLedger/getincomeplist")
+	public List<TIncomeStatement> getIncomePList(String pMon) {
+		return servTIMS.getIncomePList(pMon);
+	}
+	
+	@GetMapping("/GeneralLedger/getincomelevelmax")
+	public Integer getLevelMax(String pMon){
+		return servTIMS.getLevelMax(pMon);
 	}
 
 }
