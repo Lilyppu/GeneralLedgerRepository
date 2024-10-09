@@ -16,7 +16,7 @@ import com.GeneralLedger.Models.GlGltMaster;
 @Repository
 public interface IGlGltMasterRepository extends JpaRepository<GlGltMaster, String>{
 	
-	public List<GlGltMaster> findByGlMstrRef(String ref);
+	public Optional<GlGltMaster> findByGlMstrRef(String ref);
 	
 
 }

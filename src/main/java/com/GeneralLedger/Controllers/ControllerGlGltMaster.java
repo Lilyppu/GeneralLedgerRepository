@@ -28,8 +28,14 @@ public class ControllerGlGltMaster {
 	}
 	
 	@GetMapping("/journal/getjournalmaster")
-	public List<GlGltMaster> GlMst (String ref){
-		return servGlMs.GlMst(ref);
+	public Optional<GlGltMaster> GlMst (String refno){
+		System.out.print("aaa:"+refno+"----");
+		return servGlMs.GlMst(refno);
+	}
+	
+	@PostMapping("/journal/saveupdgltmaster")
+	public String saveUpdateJournalMaster(@RequestBody GlGltMaster glt) {
+		return servGlMs.saveUpdateJournalMaster(glt);
 	}
 	
 }
