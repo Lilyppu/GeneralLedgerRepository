@@ -29,6 +29,21 @@ public class ControllerSacMaster {
 		return servSacMst.getGlSacSts(status);
 	}
 	
+	@GetMapping("/GeneralLedger/getglsacbyacccodelist")
+	public List<GlSacMaster> getGlSacByAccCode(String acc){
+		return servSacMst.getGlSacByAccCode(acc);
+	}
+	
+	@GetMapping("/GeneralLedger/getglsacbyacccodesublist")
+	public List<GlSacMaster> getGlSacByAccCodeSub(String acc,String subacc){
+		return servSacMst.getGlSacByAccCodeSubAcc(acc, subacc);
+	}
+	
+	@GetMapping("/GeneralLedger/getglsacbyacccodedesclist")
+	public List<GlSacMaster> getGlSacByAccCodeDesc(String acc,String desc){
+		return servSacMst.getGlSacByAccCodeDesc(acc, desc);
+	}
+	
 	@GetMapping("/GeneralLedger/getglsacbyacclist")
 	public List<GlSacMaster> getGlSacByAcc(String acc){
 		return servSacMst.getGlSacByAcc(acc);
