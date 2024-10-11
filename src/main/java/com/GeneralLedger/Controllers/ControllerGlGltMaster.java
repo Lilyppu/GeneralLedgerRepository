@@ -33,7 +33,7 @@ public class ControllerGlGltMaster {
 		return servGlMs.GlMst(refno);
 	}
 	
-	@PostMapping("/journal/saveupdgltmaster")
+	@PostMapping("/journal/saveupdatejournalmaster")
 	public String saveUpdateJournalMaster(@RequestBody GlGltMaster glt) {
 		return servGlMs.saveUpdateJournalMaster(glt);
 	}

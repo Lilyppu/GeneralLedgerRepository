@@ -29,7 +29,7 @@ public class GlGltMaster {
 	@Column(name="glm_desc",length=250)
 	private String glMstrDesc;
 	
-	
+	@JsonFormat(pattern = "dd/MM/yyyy")
 	@Column(name="glm_date")
 	private Date glMstrDate;
 	
