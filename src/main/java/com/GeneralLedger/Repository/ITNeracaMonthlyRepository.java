@@ -22,7 +22,7 @@ public interface ITNeracaMonthlyRepository extends JpaRepository<TNeracaMonthly,
 	@Query("select distinct s.tnmMonth from TNeracaMonthly s where s.tnmMonth=?1")
 	public String getMonDesc(String pMon);		
 	
-	@Query(value="select * from general_ledger.t_neraca_monthly where tnm_monthly=:pMon order by tnm_fpos", nativeQuery = true)
+	@Query(value="select * from general_ledger.t_neraca_monthly where tnm_monthly=:pMon order by tnm_id", nativeQuery = true)
 	List<TNeracaMonthly> getNeracaPList(String pMon);
 	
 	@Query(value="select max(tnm_level) from general_ledger.t_neraca_monthly where tnm_monthly=:pMon", nativeQuery = true)

@@ -22,7 +22,7 @@ public interface ITIncomeStatementRepository extends JpaRepository<TIncomeStatem
 	@Query("select distinct s.tismMonth from TIncomeStatement s where s.tismMonth=?1")
 	public String getMonDesc(String pMon);	
 	
-	@Query(value="select * from general_ledger.t_incomestatement_monthly where tism_monthly=:pMon order by tism_fpos", nativeQuery = true)
+	@Query(value="select * from general_ledger.t_incomestatement_monthly where tism_monthly=:pMon order by tism_id", nativeQuery = true)
 	List<TIncomeStatement> getIncomePList(String pMon);
 	
 	@Query(value="select max(tism_level) from general_ledger.t_incomestatement_monthly where tism_monthly=:pMon", nativeQuery = true)

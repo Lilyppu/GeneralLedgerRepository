@@ -7,10 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.GeneralLedger.Models.GlGltDet;
-import com.GeneralLedger.Models.GlTypeMaster;
-import java.util.Date;
 import com.GeneralLedger.Repository.IGlGltDtailRepository;
 
+import java.util.Date;
 
 @Service
 public class ServiceGlGltDetail {
@@ -24,8 +23,7 @@ public class ServiceGlGltDetail {
 	public Optional<GlGltDet> getJournalCU(String reffNo, Integer seqno){
 		return repoGltDtl.findByGlGltDtlRefAndGlDltDtlSeqNo(reffNo, seqno);
 	}
-	
-	
+		
 	public String saveUpdateJournal(GlGltDet glt) {
 		repoGltDtl.save(glt);
 		return "Submit Successfully 1231";
@@ -55,4 +53,9 @@ public class ServiceGlGltDetail {
 		repoGltDtl.deleteById(null);
 		return "Delete Journal Successfully";
 	}
+	
+	public String getGlDate(String pGlRef, String pGlDate) {
+		return repoGltDtl.getGlDate(pGlRef, pGlDate);
+	}
+	
 }

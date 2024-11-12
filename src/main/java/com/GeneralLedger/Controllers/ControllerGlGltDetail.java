@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.GeneralLedger.Models.GlGltDet;
-import com.GeneralLedger.Models.GlTypeMaster;
 import com.GeneralLedger.Services.ServiceGlGltDetail;
 
 
@@ -29,8 +28,7 @@ public class ControllerGlGltDetail {
 	public Optional<GlGltDet> getJournalCU(String reffNo, Integer seqno){
 		return servGltDtl.getJournalCU(reffNo, seqno);
 	}
-	
-	
+		
 	@GetMapping("/journal/execpostjournal")
 	public String execPostJuournal(String p_reffno,  String msg) {
 		return servGltDtl.execPostJuournal(p_reffno, msg) ;
@@ -48,7 +46,6 @@ public class ControllerGlGltDetail {
 		return servGltDtl.execUpdateJournal(p_reffno, p_date, p_effdate , p_docno, 
 				p_doctype, p_curr, p_reffjournal,p_alcode,  outmsg);
 	}
-
 	
 	@PostMapping("/journal/saveupdjournal")
 	public String saveUpdateProduksi(@RequestBody GlGltDet glt) {
@@ -59,5 +56,10 @@ public class ControllerGlGltDetail {
 	public String DeleteData (String reff, Integer seq) {
 		return servGltDtl.DeleteData(reff, seq);
 	}
+	
+	@GetMapping("/GeneralLedger/getjurnaldate")
+	public String getGlDate(String pGlRef, String pGlDate) {
+		return servGltDtl.getGlDate(pGlRef, pGlDate);
+	}	
 	
 }

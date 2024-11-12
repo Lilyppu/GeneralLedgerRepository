@@ -14,7 +14,6 @@ import org.springframework.stereotype.Repository;
 import com.GeneralLedger.Models.GlGltDet;
 import com.GeneralLedger.Models.GlGltDetailCompkey;
 
-
 @Repository
 public interface IGlGltDtailRepository extends JpaRepository<GlGltDet,GlGltDetailCompkey> {
 
@@ -36,5 +35,10 @@ public interface IGlGltDtailRepository extends JpaRepository<GlGltDet,GlGltDetai
 		 @Modifying
 		 @Query("DELETE FROM GlGltDet m WHERE m.glGltDtlRef =?1 and m.glDltDtlSeqNo=?2") // how do I write this?
 		 public void deleteReffNo(String reff, Integer seq);
+		 
+		 @Query("select distinct to_char(s.glGltDtlGlDate,'dd/mm/yyyy') from GlGltDet s "
+		 		+ "where (s.glGltDtlRef=?1 or to_char(s.glGltDtlGlDate,'ddmmyyyy')=?2)")
+		 public String getGlDate(String pGlRef, String pGlDate);	
+		 
 }
 
